@@ -20,9 +20,9 @@ export class LoginComponent {
   
   constructor(private authService: AuthServiceService, private router: Router) {}
 
-  login1() {
+  login() {
     console.log("===== LOGIN ======");
-    this.authService.login1(this.credentials).subscribe(res => {
+    this.authService.login(this.credentials).subscribe(res => {
       // Redirect to the desired route after successful login
       if(res){
         console.log("SUCCESS !"+res.users);
@@ -37,9 +37,9 @@ export class LoginComponent {
     });
   }
 
-  login(): void {
+  login1(): void {
     console.log("===== LOGIN ======");
-    this.authService.login(this.username, this.password)
+    this.authService.login1(this.username, this.password)
       .subscribe(
         response => {
           // Handle successful login response

@@ -2,12 +2,12 @@ package com.tirage.carte.repository;
 
 import com.tirage.carte.model.UserEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.Query;
-import org.springframework.stereotype.Repository;
+
+import java.util.Optional;
 
 
 public interface UserRepository extends JpaRepository<UserEntity, Long> {
 
 
-    UserEntity findByUserNameAndPassWord(String userName, String passWord) throws RuntimeException;
+    Optional<UserEntity> findByUserNameAndPassWord(String userName, String passWord) throws RuntimeException;
 }

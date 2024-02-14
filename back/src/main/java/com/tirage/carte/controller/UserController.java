@@ -9,6 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
         import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/api")
@@ -17,14 +18,14 @@ public class UserController {
     @Autowired
     private UserRepository userRepository;
 
-    @GetMapping
+    @GetMapping("/users")
     public List<UserEntity> getAllUsers() {
         List<UserEntity> user = userRepository.findAll();
         System.out.println("User ====> " + user);
         return user;
     }
 
-    @PostMapping
+    @PostMapping("/users")
     public UserEntity createUser(@RequestBody UserEntity user) {
         return userRepository.save(user);
     }
@@ -40,10 +41,10 @@ public class UserController {
         String username = loginRequest.getUsername();
         String password = loginRequest.getPassword();
         // Perform authentication logic
-        UserEntity user = userRepository.findByUserNameAndPassWord(username,password);
-        if (user != null && password.equals(user.getPassWord())) {
+        Optional<UserEntity> user = userRepository.findByUserNameAndPassWord(username,password);
+        if (user.isPresent() && password.equals(user.get().getPassWord())) {
             // Authentication successful
-            return ResponseEntity.ok(user);
+            return ResponseEntity.ok(user.get());
         } else {
             // Authentication failed
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(null);
