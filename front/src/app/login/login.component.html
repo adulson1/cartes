@@ -1,11 +1,18 @@
-<form (ngSubmit)="login()">
-  <div>
-    <label for="username">Username:</label>
-    <input type="text" id="username" name="username" [(ngModel)]="credentials.username">
-  </div>
-  <div>
-    <label for="password">Password:</label>
-    <input type="password" id="password" name="password" [(ngModel)]="credentials.password">
-  </div>
-  <button type="submit">Login</button>
-</form>
+<mat-card>
+  <mat-card-title>Login</mat-card-title>
+  <mat-card-content>
+    <form [formGroup]="loginForm" (ngSubmit)="login()">
+      <mat-form-field appearance="fill">
+        <input matInput formControlName="username" placeholder="Username">
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <input matInput formControlName="password" type="password" placeholder="Password">
+      </mat-form-field>
+      <button mat-raised-button color="primary" type="submit" [disabled]="loginForm.invalid || isLoading">
+        Login
+      </button>
+    </form>
+  </mat-card-content>
+</mat-card>
+
+<mat-progress-bar *ngIf="isLoading" mode="indeterminate"></mat-progress-bar>
