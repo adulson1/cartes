@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.*;
         import java.util.List;
 
 @RestController
+@CrossOrigin("localhost:4200/")
 @RequestMapping("/api/users")
 public class UserController {
 
@@ -35,7 +36,7 @@ public class UserController {
                 .orElseThrow(() -> new RuntimeException("User not found with id: " + id));
     }
 
-    @GetMapping("/login")
+    @PostMapping("/login")
     public ResponseEntity<UserEntity> login(@RequestBody LoginRequest loginRequest) {
         String username = loginRequest.getUsername();
         String password = loginRequest.getPassword();
