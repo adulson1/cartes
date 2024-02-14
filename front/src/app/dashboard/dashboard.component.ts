@@ -1,5 +1,5 @@
 import { animate, state, style, transition, trigger } from '@angular/animations';
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-dashboard',
@@ -21,5 +21,7 @@ import { Component } from '@angular/core';
 
 })
 export class DashboardComponent {
+  @Input() value: string;
+  @Input() suit: string;
 
 }

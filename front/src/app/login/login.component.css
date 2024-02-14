@@ -1,11 +1,10 @@
-.login-container {
-    width: 300px;
-    margin: 0 auto;
-  }
-  
-  input, button {
-    display: block;
-    width: 100%;
-    margin-bottom: 10px;
-  }
-  
+mat-card {
+  max-width: 400px;
+  margin: auto;
+  margin-top: 50px;
+  padding: 20px;
+}
+
+mat-progress-bar {
+  margin-top: 20px;
+}
