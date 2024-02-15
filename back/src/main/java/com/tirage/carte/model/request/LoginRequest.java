@@ -1,4 +1,4 @@
-package com.tirage.carte.model;
+package com.tirage.carte.model.request;
 
 import lombok.Data;
 

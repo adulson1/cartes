@@ -10,12 +10,12 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.*;
 
 @RestController
-@RequestMapping("/api/cartes")
+@RequestMapping("/api")
 public class CarteController {
     @Autowired
     private CarteRepository cr;
 
-    @GetMapping("tirage")
+    @GetMapping("/cartes/tirage")
     public Set<CarteEntity> getTirage(){
 
         List<CarteEntity> allCarteEntities = cr.findAll();
@@ -29,7 +29,7 @@ public class CarteController {
 
 
 
-    @GetMapping("order")
+    @GetMapping("/cartes/order")
     public List<CarteEntity> orderAllCartes(List<CarteEntity> laMain){
 
         return null;

@@ -1,6 +1,6 @@
 package com.tirage.carte.controller;
 
-import com.tirage.carte.model.LoginRequest;
+import com.tirage.carte.model.request.LoginRequest;
 import com.tirage.carte.model.UserEntity;
 import com.tirage.carte.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
