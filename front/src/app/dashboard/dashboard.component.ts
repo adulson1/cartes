@@ -25,7 +25,7 @@ import { MatInputModule } from '@angular/material/input';
 export class DashboardComponent {
   cardPath : string = "assets/cards/";
   cards = [
-    { imagePath:'assets/cards/hearts/redjoker.png'},
+    { imagePath:'assets/cards/1_hearts/redjoker.png'},
   ];
 
   displayCardGrid: boolean = false;
