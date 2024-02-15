@@ -17,6 +17,10 @@
             <button mat-raised-button color="primary" [disabled]="isLoading" 
             (click)="showCardGrid()">Show Card Grid
               </button>
+
+              <button style="float: right;" mat-raised-button color="primary" [disabled]="isLoading" 
+            (click)="sortCardGrid()">Sorted Card Grid
+              </button>
         </div>
         <mat-progress-bar *ngIf="isLoading" mode="indeterminate"></mat-progress-bar>
 

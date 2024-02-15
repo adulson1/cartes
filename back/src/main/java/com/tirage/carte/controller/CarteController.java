@@ -37,7 +37,7 @@ public class CarteController {
 
 
     private List<CarteEntity> createAllcartes() {
-        List<String> colors = Arrays.asList("diamonds", "hearts", "spades", "clubs");
+        List<String> colors = Arrays.asList("2_diamonds", "1_hearts", "3_spades", "4_clubs");
         List<String> valuesString = Arrays.asList("ace", "queen", "king", "jack",
                 "5", "10", "8", "6", "7", "4", "2", "3", "9");
 
