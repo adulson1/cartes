@@ -37,8 +37,8 @@ public class CarteController {
 
 
     private List<CarteEntity> createAllcartes() {
-        List<String> colors = Arrays.asList("Carreaux", "Coeur", "Pique", "Trèfle");
-        List<String> valuesString = Arrays.asList("As", "Dame", "Roi", "Valet",
+        List<String> colors = Arrays.asList("diamonds", "hearts", "spades", "clubs");
+        List<String> valuesString = Arrays.asList("ace", "queen", "king", "jack",
                 "5", "10", "8", "6", "7", "4", "2", "3", "9");
 
         List<CarteEntity> allCarteEntities = new ArrayList<>();

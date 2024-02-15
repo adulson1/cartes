@@ -1,10 +1,16 @@
 <mat-card>
     <mat-card-content>
-        <div class="card-grid">
-            <div *ngFor="let card of cards" class="card-item">
-                <div>
-                    <img [src]="card.imagePath" alt="Poker Card">
-                </div>        
+        <div class="grid-container">
+            <div *ngFor="let card of cards" >
+                <div *ngIf="cards.length > 1; else elseTemplate">
+                    <img [src]="card.imagePath" alt="Poker Card" class="grid-item" >
+                </div>   
+                <ng-template #elseTemplate>
+                    <div >
+                        <img [src]="card.imagePath" alt="Poker Card" class="grid-item" >
+                    </div> 
+                </ng-template>
+                     
             </div>
         </div>
         <div>

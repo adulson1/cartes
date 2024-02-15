@@ -23,10 +23,9 @@ import { MatInputModule } from '@angular/material/input';
 
 })
 export class DashboardComponent {
-
+  cardPath : string = "assets/cards/";
   cards = [
-    { imagePath: 'assets/cards/hearts/king_of_hearts2.png' },
-    { imagePath: 'assets/cards/spades/king_of_spades2.png' },
+    { imagePath:'assets/cards/hearts/redjoker.png'},
   ];
 
   displayCardGrid: boolean = false;
@@ -42,10 +41,15 @@ export class DashboardComponent {
       this.cardService.drawingCard().subscribe(res => {
       // Redirect to the desired route after successful login
       if(res){
-        console.log("GIRD !"+JSON.stringify(res));
+        while(this.cards.length>0 ){
+          //console.log(this.cards.length+" == POP == ");//+this.cards.pop());
+          this.cards.splice(this.cards.length-1, 1);
+        }
+          
+        //console.log("GIRD !"+JSON.stringify(res));
         for(let item of res ){
-          JSON.stringify(item)
-         // this.cards.push({item.color, item.value});
+          console.log(this.cardPath+item.color+'/'+item.valueCarte+'.png');
+          this.cards.unshift({imagePath: this.cardPath+item.color+'/'+item.valueCarte+'.png' });
         }
           
         

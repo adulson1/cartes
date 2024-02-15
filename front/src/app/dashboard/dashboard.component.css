@@ -29,4 +29,29 @@
   mat-progress-bar {
     margin-top: 20px;
   }
+
+  .grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+    background-color: #b2c2cf;
+    padding: 10px;
+    margin: 2px;
+    max-width: auto;
+    margin-right: auto;
+    margin-left: auto;
+    border-radius: 4px;
+  }
+  .grid-item {
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 4px solid rgba(0, 0, 0, 0.8);
+    padding: 5px;
+    font-size: 30px;
+    text-align: center;
+    width: 250px;
+    max-height: auto;
+    margin: 2px;
+    margin-bottom: 2px;
+    margin-top: 2px;
+   
+  }
   
