@@ -64,12 +64,18 @@ export class DashboardComponent {
       setTimeout(() => {
         // Perform actual login logic here
         this.isLoading = false;
-      }, 2000);
+      }, 500);
     
   }
 
   sortCardGrid(){
     console.log("CARD 1 "+JSON.stringify(this.cards));
+    this.isLoading = true;
+      // Simulate login process with a delay
+      setTimeout(() => {
+        // Perform actual login logic here
+        this.isLoading = false;
+      }, 500);
     this.cards.sort((a, b) => a.imagePath.localeCompare(b.imagePath));
     console.log("CARD 2 "+JSON.stringify(this.cards));
   }
